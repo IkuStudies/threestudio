@@ -112,9 +112,7 @@ def main() -> None:
     callbacks = []
     if args.train:
         callbacks += [
-            ModelCheckpoint(
-                dirpath=os.path.join(cfg.trial_dir, "ckpts"), **cfg.checkpoint
-            ),
+            ModelCheckpoint(dirpath="/content/drive/MyDrive/checkpoints", **cfg.checkpoint),
             LearningRateMonitor(logging_interval="step"),
             CustomProgressBar(refresh_rate=1),
             CodeSnapshotCallback(
